@@ -17,13 +17,10 @@ def getCac40():
     publisher.publish_tweet(textToPublish)
 
 
-def CFH():
-    publisher=TwitterClient();
-    publisher.publish_tweet("Courage, Force et honneur")
 def test():
     with open('tweets.txt','a') as file:
         print('Filename:',  file=file)
 if __name__ == '__main__':
-    schedule.every().day.at("18:26").do(CFH)
+    schedule.every().day.at("18:26").do(getCac40())
     while True:
         schedule.run_pending()
