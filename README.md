@@ -1,18 +1,19 @@
-## Welcome to GitHub Pages
+## Final school project : Twitter notifications for financial markets 
 
-You can use the [editor on GitHub](https://github.com/youssk541/fnstatz.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This project is designed to automatically publish tweets about financial markets . 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+## Setup
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+# Step1
 
-```markdown
-Syntax highlighted code block
+Create a twitter developper app . You can find a comprehensive tutorial here : https://www.youtube.com/watch?v=2o_qt9cXicM
 
-# Header 1
-## Header 2
+# Step 2
+
+In the file "twitter_credentials.py" , replace the credentials with the ones you've been given for your account (Make sure to also store them somewhere else as they might not be given again)
+
+# Header 2
 ### Header 3
 #FOOLFOWL
 - Bulleted
