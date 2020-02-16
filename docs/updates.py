@@ -8,10 +8,10 @@ from datetime import datetime, timedelta
 from urllib.request import urlopen as uReq
 import matplotlib.pyplot as plt
 import requests
-from  docs.webScraping import *
+from  webScraping import *
 from bs4 import BeautifulSoup as soup
-from docs.LinksAndLists import *
-from docs.IndicatorObject import IndicatorObject
+from LinksAndLists import *
+from IndicatorObject import IndicatorObject
 from pandas.plotting import table
 
 publisher = TwitterClient()

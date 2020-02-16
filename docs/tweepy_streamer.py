@@ -3,7 +3,7 @@ from tweepy import Cursor
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
-import docs.twitter_credentials
+import twitter_credentials
 
 
 class TwitterClient:
@@ -47,8 +47,8 @@ class TwitterClient:
 class TwitterAuthenticator:
     @staticmethod
     def authenticate_twitter_app():
-        auth = OAuthHandler(docs.twitter_credentials.CONSUMER_KEY, docs.twitter_credentials.CONSUMER_SECRET)
-        auth.set_access_token(docs.twitter_credentials.ACCESS_TOKEN, docs.twitter_credentials.ACCESS_TOKEN_SECRET)
+        auth = OAuthHandler(twitter_credentials.CONSUMER_KEY, twitter_credentials.CONSUMER_SECRET)
+        auth.set_access_token(twitter_credentials.ACCESS_TOKEN, twitter_credentials.ACCESS_TOKEN_SECRET)
         return auth
 
 

@@ -1,7 +1,7 @@
-from docs.updates import *
+from updates import *
 import schedule
 from timeloop import Timeloop
-from docs.tweepy_streamer import TwitterClient
+from tweepy_streamer import TwitterClient
 
 tl = Timeloop()  # Handles periodic executions in multiple threads
 publisher = TwitterClient()

@@ -1,8 +1,8 @@
 from urllib.request import urlopen,Request
 from bs4 import BeautifulSoup as soup
-from docs.LinksAndLists import url_dict_inflation, month_swap_dict
+from LinksAndLists import url_dict_inflation, month_swap_dict
 from datetime import datetime
-from docs.tweepy_streamer import TwitterClient
+from tweepy_streamer import TwitterClient
 import pandas as pd
 import numpy as np
 

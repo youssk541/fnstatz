@@ -1,5 +1,4 @@
-from docs.webScraping import governmentRateContainer,InflationContainer
-from docs.updates import *
+from updates import *
 import concurrent.futures
 import sys
 import os
