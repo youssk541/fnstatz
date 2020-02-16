@@ -1,0 +1,1 @@
+This directory stores images published to the account.
