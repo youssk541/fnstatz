@@ -11,32 +11,9 @@ month_swap_dict = {'janvier': 'Jan',
                    'novembre': 'Nov',
                    'décembre': 'Dec'
                    }
-# url_dict = {
-#     '1week Euribor': "https://fr.global-rates.com/taux-de-interets/euribor/taux-de-interets-euribor-1-semaine.aspx",
-#     '1month Euribor': "https://fr.global-rates.com/taux-de-interets/euribor/taux-de-interets-euribor-1-mois.aspx",
-#     '3month Euribor': "https://fr.global-rates.com/taux-de-interets/euribor/taux-de-interets-euribor-3-mois.aspx",
-#     '6month Euribor': "https://fr.global-rates.com/taux-de-interets/euribor/taux-de-interets-euribor-6-mois.aspx",
-#     '12month Euribor': "https://fr.global-rates.com/taux-de-interets/euribor/taux-de-interets-euribor-12-mois.aspx",
-#     'EONIA': "https://fr.global-rates.com/taux-de-interets/eonia/eonia.aspx",
-#     '1week LiborEUR': "https://fr.global-rates.com/taux-de-interets/libor/euro-europeen/eur-libor-interets-1-semaine.aspx",
-#     '1month LiborEUR': "https://fr.global-rates.com/taux-de-interets/libor/euro-europeen/eur-libor-interets-1-mois.aspx",
-#     '3month LiborEUR': "https://fr.global-rates.com/taux-de-interets/libor/euro-europeen/eur-libor-interets-3-mois.aspx",
-#     '6month LiborEUR': "https://fr.global-rates.com/taux-de-interets/libor/euro-europeen/eur-libor-interets-6-mois.aspx",
-#     '12month LiborEUR': "https://fr.global-rates.com/taux-de-interets/libor/euro-europeen/eur-libor-interets-12-mois.aspx",
-#     'Overnight LiborEUR': "https://fr.global-rates.com/taux-de-interets/libor/euro-europeen/eur-libor-interets-overnight.aspx",
-#     '1week LiborUSD': "https://fr.global-rates.com/taux-de-interets/libor/dollar-americain/usd-libor-interets-1-semaine.aspx",
-#     '1month LiborUSD': "https://fr.global-rates.com/taux-de-interets/libor/dollar-americain/usd-libor-interets-1-mois.aspx",
-#     '3month LiborUSD': "https://fr.global-rates.com/taux-de-interets/libor/dollar-americain/usd-libor-interets-3-mois.aspx",
-#     '6month LiborUSD': "https://fr.global-rates.com/taux-de-interets/libor/dollar-americain/usd-libor-interets-6-mois.aspx",
-#     '12month LiborUSD': "https://fr.global-rates.com/taux-de-interets/libor/dollar-americain/usd-libor-interets-12-mois.aspx",
-#     'Overnight LiborUSD': "https://fr.global-rates.com/taux-de-interets/libor/dollar-americain/usd-libor-interets-overnight.aspx",
-#     '1week LiborGBP': "https://fr.global-rates.com/taux-de-interets/libor/livre-sterling-britannique/gbp-libor-interets-1-semaine.aspx",
-#     '1month LiborGBP': "https://fr.global-rates.com/taux-de-interets/libor/livre-sterling-britannique/gbp-libor-interets-1-mois.aspx",
-#     '3month LiborGBP': "https://fr.global-rates.com/taux-de-interets/libor/livre-sterling-britannique/gbp-libor-interets-3-mois.aspx",
-#     '6month LiborGBP': "https://fr.global-rates.com/taux-de-interets/libor/livre-sterling-britannique/gbp-libor-interets-6-mois.aspx",
-#     '12month LiborGBP': "https://fr.global-rates.com/taux-de-interets/libor/livre-sterling-britannique/gbp-libor-interets-12-mois.aspx",
-#     'Overnight LiborGBP': "https://fr.global-rates.com/taux-de-interets/libor/livre-sterling-britannique/gbp-libor-interets-overnight.aspx",
-#     }
+
+Maturities_Instant_Forward=['IF_3M','IF_6M', 'IF_9M', 'IF_1Y', 'IF_2Y', 'IF_3Y', 'IF_4Y', 'IF_5Y', 'IF_6Y', 'IF_7Y', 'IF_8Y', 'IF_9Y', 'IF_10Y', 'IF_11Y', 'IF_12Y', 'IF_13Y', 'IF_14Y', 'IF_15Y', 'IF_16Y', 'IF_17Y', 'IF_18Y', 'IF_19Y', 'IF_20Y', 'IF_21Y', 'IF_22Y', 'IF_23Y', 'IF_24Y', 'IF_25Y', 'IF_26Y', 'IF_27Y', 'IF_28Y', 'IF_29Y','IF_30Y']
+Maturities_Spot_Rate=['SR_3M','SR_6M', 'SR_9M', 'SR_1Y', 'SR_2Y', 'SR_3Y', 'SR_4Y', 'SR_5Y', 'SR_6Y', 'SR_7Y', 'SR_8Y', 'SR_9Y', 'SR_10Y', 'SR_11Y', 'SR_12Y', 'SR_13Y', 'SR_14Y', 'SR_15Y', 'SR_16Y', 'SR_17Y', 'SR_18Y', 'SR_19Y', 'SR_20Y', 'SR_21Y', 'SR_22Y', 'SR_23Y', 'SR_24Y', 'SR_25Y', 'SR_26Y', 'SR_27Y', 'SR_28Y', 'SR_29Y','SR_30Y']
 
 url_dict_inflation = {
     'Inflation Germany' : "https://fr.global-rates.com/statistiques-economiques/inflation/indice-des-prix-a-la-consommation/ipc/allemagne.aspx",
@@ -99,7 +76,7 @@ listSP500 = ['MMM', 'ABT', 'ABBV', 'ABMD', 'ACN', 'ATVI', 'ADBE', 'AMD', 'AAP', 
              'UAL', 'UNH', 'UPS', 'URI', 'UTX', 'UHS', 'UNM', 'VFC', 'VLO', 'VAR', 'VTR', 'VRSN', 'VRSK', 'VZ', 'VRTX',
              'VIAC', 'V', 'VNO', 'VMC', 'WRB', 'WAB', 'WMT', 'WBA', 'DIS', 'WM', 'WAT', 'WEC', 'WFC', 'WELL',
              'WDC', 'WU', 'WRK', 'WY', 'WHR', 'WMB', 'WLTW', 'WYNN', 'XEL', 'XRX', 'XLNX', 'XYL', 'YUM', 'ZBH', 'ZION',
-             'ZTS']  # Delisted ["BRK.B","BF.B", "JEC"]
+             'ZTS']
 
 listDAX = ['ADS.DE', 'ALV.DE', 'BAS.DE', 'BAYN.DE', 'BEI.DE', 'BMW.DE', 'CON.DE', '1COV.DE', 'DAI.DE', 'DBK.DE',
            'DB1.DE', 'LHA.DE', 'DPW.DE', 'DTE.DE', 'EOAN.DE', 'FRE.DE', 'FME.DE', 'HEI.DE', 'HEN3.DE', 'IFX.DE',
@@ -118,11 +95,9 @@ Indices = dict({'^DJI': 'Dow Jones Industrial',
                 'BZ=F': 'Brent',
                 'ZC=F': 'Corn',
                 'ZW=F': 'Wheat'
-                })  # DELISTED Global dow (^GDOW)
+                })
 
 rootDir="./"
-pickledDataDirectoryPath="./pickledFiles"
-repositoryDirectory = "./Image_Directory"
-rateFileDirectory="./RateFiles"
-Maturities_Instant_Forward=['IF_3M','IF_6M', 'IF_9M', 'IF_1Y', 'IF_2Y', 'IF_3Y', 'IF_4Y', 'IF_5Y', 'IF_6Y', 'IF_7Y', 'IF_8Y', 'IF_9Y', 'IF_10Y', 'IF_11Y', 'IF_12Y', 'IF_13Y', 'IF_14Y', 'IF_15Y', 'IF_16Y', 'IF_17Y', 'IF_18Y', 'IF_19Y', 'IF_20Y', 'IF_21Y', 'IF_22Y', 'IF_23Y', 'IF_24Y', 'IF_25Y', 'IF_26Y', 'IF_27Y', 'IF_28Y', 'IF_29Y','IF_30Y']
-Maturities_Spot_Rate=['SR_3M','SR_6M', 'SR_9M', 'SR_1Y', 'SR_2Y', 'SR_3Y', 'SR_4Y', 'SR_5Y', 'SR_6Y', 'SR_7Y', 'SR_8Y', 'SR_9Y', 'SR_10Y', 'SR_11Y', 'SR_12Y', 'SR_13Y', 'SR_14Y', 'SR_15Y', 'SR_16Y', 'SR_17Y', 'SR_18Y', 'SR_19Y', 'SR_20Y', 'SR_21Y', 'SR_22Y', 'SR_23Y', 'SR_24Y', 'SR_25Y', 'SR_26Y', 'SR_27Y', 'SR_28Y', 'SR_29Y','SR_30Y']
+pickledDataDirectoryPath="./../pickledFiles"
+repositoryDirectory = "./../Image_Directory"
+rateFileDirectory="./../RateFiles"

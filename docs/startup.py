@@ -1,10 +1,10 @@
-from .webScraping import governmentRateContainer,inflation_Container
-from .updates import *
+from docs.webScraping import governmentRateContainer,InflationContainer
+from docs.updates import *
 import concurrent.futures
 import sys
-
+import os
 def pickleObjectList(objectList,fileName):
-    with open(fileName, "wb") as f:
+    with open(fileName, "wb+") as f:
         pickle.dump(len(objectList), f)
         for value in objectList:
             pickle.dump(value, f)
@@ -12,7 +12,7 @@ def pickleObjectList(objectList,fileName):
 
 def createObjects(listSymbols, listIndicatorObjects):
     with concurrent.futures.ProcessPoolExecutor() as executor:
-        for indicator, boole in zip(listSymbols, executor.map(indicatorObject, listSymbols)):
+        for indicator, boole in zip(listSymbols, executor.map(IndicatorObject, listSymbols)):
             listIndicatorObjects.append(boole)
     return listIndicatorObjects
 
@@ -24,7 +24,7 @@ def startup():
     createObjects(listCAC40, CAC40ComponentObjects)
     createObjects(listDAX, DAXComponentObjects)
     createObjects(listFTSE, FTSEComponentObjects)
-    [Inflation_objets.append(inflation_Container(urlIndex)) for urlIndex in url_dict_inflation.keys()]
+    [Inflation_objets.append(InflationContainer(urlIndex)) for urlIndex in url_dict_inflation.keys()]
     governmentRateObject = governmentRateContainer()
     ####
     pickleObjectList(IndicesIndicatorObjects, pickledDataDirectoryPath +"/Indices.dat")
@@ -38,8 +38,7 @@ def startup():
 
 if __name__== "__main__":
     startup()
-    # while True:
-    #     schedule.run_pending()
-    #     time.sleep(1)
-
+    #
+    # governmentRateObject = governmentRateContainer()
+    # os.mkdir('bla')
 
