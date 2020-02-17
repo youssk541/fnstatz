@@ -7,22 +7,31 @@ This project is designed to automatically publish tweets about financial markets
 
 # Step1
 
-Create a twitter developper app . You can find a comprehensive tutorial here : https://www.youtube.com/watch?v=2o_qt9cXicM
+Create a twitter developper app . You can find a comprehensive tutorial here : [Link](https://www.youtube.com/watch?v=2o_qt9cXicM)
 
 # Step 2
 
-In the file "twitter_credentials.py" , replace the credentials with the ones you've been given for your account (Make sure to also store them somewhere else as they might not be given again)
+Create a file _twitter_credentials.py_.
+In this file, create 4 fields : 
 
-# Header 2
-### Header 3
-#FOOLFOWL
-- Bulleted
-- List
+- ACCESS_TOKEN=""
+- ACCESS_TOKEN_SECRET=""
+- CONSUMER_KEY=""
+- CONSUMER_SECRET=""
 
-1. Numbered
-2. List
+Replace the credentials with the ones you've been given for your account (Make sure to also store them somewhere else as they might not be given again)
 
-**Bold** and _Italic_ and `Code` text
+# Step 3
+
+I assume python is installed on your machine and that you have a environment variable "python" linked to your version of the software
+In the command prompt run :**python -m pip -r requirements.txt**
+
+# Step 4
+
+Create two empty folders :
+
+- pickledFiles
+- Image_Director
 
 [Link](url) and ![Image](src)
 ```
