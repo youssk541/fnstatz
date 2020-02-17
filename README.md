@@ -11,8 +11,7 @@ Create a twitter developper app . You can find a comprehensive tutorial here : [
 
 # Step 2
 
-Create a file _twitter_credentials.py_.
-In this file, create 4 fields : 
+In  _twitter_credentials.py_ this file, fill out the 4 fields : 
 
 - ACCESS_TOKEN=""
 - ACCESS_TOKEN_SECRET=""
