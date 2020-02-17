@@ -20,16 +20,9 @@ In  _twitter_credentials.py_ this file, fill out the 4 fields :
 
 Replace the credentials with the ones you've been given for your account (Make sure to also store them somewhere else as they might not be given again)
 
-# Step 3
-
-I assume python is installed on your machine and that you have a environment variable "python" linked to your version of the software
-In the command prompt run **python -m pip -r requirements.txt**
-
 # Step 4
 
-Create two empty folders :
-
-- pickledFiles
-- Image_Director
+Execute _Startup_ to initalize the application.
+Execute startTwitter to start the publications and analysis.
 
 
