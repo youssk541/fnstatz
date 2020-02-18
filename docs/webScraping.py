@@ -1,10 +1,10 @@
 from urllib.request import urlopen,Request
 from bs4 import BeautifulSoup as soup
-from LinksAndLists import url_dict_inflation, month_swap_dict
 from datetime import datetime
-from tweepy_streamer import TwitterClient
 import pandas as pd
 import numpy as np
+from LinksAndLists import *
+from tweepy_streamer import TwitterClient
 
 
 def scrape(url):
@@ -84,17 +84,3 @@ class governmentRateContainer:
             publisher.publish_tweet(message)
 
 
-# def getVstoxx():
-#     url = 'https://www.stoxx.com/index-details?symbol=V2TX'
-#     page = uReq(url).read()
-#     page_soup_html = soup(page, 'html5lib')
-#     container = page_soup_html.find('tr', {'class': 'last'})
-#     print(container)
-#     print(container.find('td', {'id': "overview-last-value"}))
-
-# for i in range(500):
-#     tickers.append(yf.Ticker(listSP500[i]))
-#     tickers[i].history(period='1d')
-
-if __name__ == "__main__":
-    publisher=TwitterClient()

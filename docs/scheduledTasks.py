@@ -1,9 +1,6 @@
 from updates import *
 import schedule
-from timeloop import Timeloop
-from tweepy_streamer import TwitterClient
-
-tl = Timeloop()  # Handles periodic executions in multiple threads
+import os
 publisher = TwitterClient()
 
 schedule.every().saturday.at("22:20").do(YieldCurve, publisher)
@@ -18,11 +15,12 @@ schedule.every().day.at("22:10").do(dailyUpdateAmerican, publisher)
 schedule.every().day.at("22:00").do(rateUpdate)
 schedule.every().day.at("17:30").do(endOfDayEuropeanStockMarket, publisher)
 schedule.every().day.at("22:30").do(endOfDayUsStockMarket, publisher)
-
 schedule.every(15).minutes.do(highFrequencyUpdateEuropeanStocks, publisher)
 schedule.every(15).minutes.do(highFrequencyUpdateAmericanStocks, publisher)
 
 if __name__=="__main__":
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
+	print("APPLICATION IS ACTIVE \nYOU CAN MINIMIZE THE WINDOW THE APP WILL STAY ACTIVE \nTO TERMINATE PRESS CTRL+C OR CLOSE THE CMD WINDOW")
+	while True:
+	    schedule.run_pending()
+	    time.sleep(1)
+

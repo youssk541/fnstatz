@@ -8,13 +8,13 @@ from datetime import datetime, timedelta
 from urllib.request import urlopen as uReq
 import matplotlib.pyplot as plt
 import requests
-from  webScraping import *
-from bs4 import BeautifulSoup as soup
-from LinksAndLists import *
-from IndicatorObject import IndicatorObject
 from pandas.plotting import table
+from bs4 import BeautifulSoup as soup
 
-publisher = TwitterClient()
+from webScraping import *
+from IndicatorObject import IndicatorObject
+
+import yfinance as yf
 """
         USEFUL FUNCTIONS
 """
@@ -76,8 +76,10 @@ def highFrequencyUpdateEuropeanStocks(publisher):
             except:
                 pass
     if message:
-        publisher.publish_tweet("Euro market in the last 15 minutes:" + '\n' + message)
-
+        try:
+            publisher.publish_tweet("Euro market in the last 15 minutes:" + '\n' + message)
+        except:
+            pass
 
 def highFrequencyUpdateAmericanStocks(publisher):
     if not datetime.today().weekday() <= 4:  # If it's not a weekday, no update
@@ -100,7 +102,6 @@ def highFrequencyUpdateAmericanStocks(publisher):
                 pass
     if message:
         publisher.publish_tweet("US market in the last 15 minutes:" + '\n' + message)
-
 
 """ 
 
@@ -216,7 +217,7 @@ def endOfDayEuropeanStockMarket(publisher):
 
     publisher.tweet_image("EUROPE: Top 10 movements in blue-chip stock market / Advance - Decline",
                           [repositoryDirectory + '/EODeuroMarket' + str(datetime.today().date()) + '.png',
-                           repositoryDirectory + "EUbreadth" + str(datetime.today().date()) + '.png']
+                           repositoryDirectory + "/EUbreadth" + str(datetime.today().date()) + '.png']
                           )
 
 
@@ -277,7 +278,7 @@ def endOfDayUsStockMarket(publisher):
 
     publisher.tweet_image("US : Top 10 movements in blue-chip stock market / Advance - Decline",
                           [repositoryDirectory + '/EODUSMarket' + str(datetime.today().date()) + '.png',
-                           repositoryDirectory + "USbreadth" + str(datetime.today().date()) + '.png']
+                           repositoryDirectory + "/USbreadth" + str(datetime.today().date()) + '.png']
                           )
 
 
@@ -350,7 +351,7 @@ def updateEuropeanRateFile():
             value = float(element.find('./ObsValue').attrib['value'])
             Instant_Forward_Rates.at[date, period] = value
 
-    if datetime.today().weekday() <= 4:  # If it's not a weekday, no update
+    if not datetime.today().weekday() <= 4:  # If it's not a weekday, no update
         Spot_Rates.to_csv(rateFileDirectory + '/Spot_Rates.csv', sep='\t', mode='a', header=None)
         Instant_Forward_Rates.to_csv(rateFileDirectory + '/Instant_Forward_Rates.csv', sep='\t', mode='a', header=None)
 
@@ -360,7 +361,8 @@ def updateEuropeanRateFile():
 def updateUSRateFile():
     if not datetime.today().weekday() <= 5:  # If it's not a weekday, no update
         return
-    link = 'https://www.treasury.gov/resource-center/data-chart-center/interest-rates/Pages/TextView.aspx?data=yield'
+    link = 'https://www.treasury.gov/resource-center/data-chart-center/interest-rates/Pages/TextView.aspx?data=yieldYear&year=2020'
+
     def floatify(string):
         try:
             return float(string)
@@ -373,13 +375,15 @@ def updateUSRateFile():
     page_soup_html = soup(codecs.decode(page, 'utf-8'), "html.parser")
     data = page_soup_html.find("table", {"class": ["t-chart"]}).findAll('tr')
     treasury_yields = pd.DataFrame(columns=[string.text for string in data[0].findAll('th')[1:]])
-    row = data[-1].findAll('td')
-    treasury_yields.loc[datetime.strptime(row[0].text, "%m/%d/%y")] = [floatify(element.text) for element in row[1:]]
 
-    if not datetime.today().weekday() > 0:  # If it's not a weekday, no update
-        treasury_yields.to_csv(rateFileDirectory + '/treasury_yields.csv', sep='\t', mode='a', header=None)
-
-    return treasury_yields.T
+    for element in data:
+        row = element.findAll('td')
+        if (row):
+            treasury_yields.loc[datetime.strptime(row[0].text, "%m/%d/%y")] = [floatify(element.text) for element in
+                                                                               row[1:]]
+    if not datetime.today().weekday() <= 4:  # If it's not a weekday, no update
+        treasury_yields.to_csv(rateFileDirectory + '/treasuryTest.csv', sep='\t', mode='a', header=None)
+    return treasury_yields.T[-1]
 
 
 def rateUpdate():  # Only use is to schedule them both at the same time
@@ -506,5 +510,5 @@ def getEconomicSentiment(publisher):
     previousNumber = "".join(actualRow.find("div" , {"class":"event-table-history__previous"}).text.split())
     publisher.publish_tweet(" ".join(["Zew indicator of economic sentiment :",actualNumber,"(Previous result :",previousNumber,")\nNext release",str(datetime.fromtimestamp(int(nextDate)/1000).date())]))
 
-
-# if __name__ == '__main__':
+if __name__=="__main__":
+    updateEuropeanRateFile()

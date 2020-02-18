@@ -88,7 +88,6 @@ Indices = dict({'^DJI': 'Dow Jones Industrial',
                 '^GDAXI': 'DAX',
                 '^FCHI': 'CAC40',
                 '^FTSE': 'FTSE',
-                '^STOXX50E': 'STOXX50',
                 'GC=F': 'L\'OR',
                 '^XAU': 'L\'argent',
                 'WTI': 'West Texas Intermediate',
@@ -98,6 +97,6 @@ Indices = dict({'^DJI': 'Dow Jones Industrial',
                 })
 
 rootDir="./"
-pickledDataDirectoryPath="./../pickledFiles"
-repositoryDirectory = "./../Image_Directory"
-rateFileDirectory="./../RateFiles"
+pickledDataDirectoryPath="../pickledFiles"
+repositoryDirectory = "../Image_Directory"
+rateFileDirectory="../RateFiles"

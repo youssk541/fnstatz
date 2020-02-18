@@ -64,10 +64,10 @@ class IndicatorObject:
     def highFrequencyCheck(self):
         temp_data = self.ticker.history(period='1d', interval='15m')
         try:
-            var = (temp_data['Close'][0] - temp_data['Open'][0]) / temp_data['Open'][0]
+            var = (temp_data['Close'][-1] - temp_data['Open'][-1]) / temp_data['Open'][-1]
         except:
             return
-        if abs(var * 100) >= 5:
+        if abs(var * 100) >= 2:
             return [self.tag, round(var * 100, 3)]
 
     def checkForChange(self):
@@ -108,9 +108,3 @@ class IndicatorObject:
             message += " ".join(["Moving average", upper[0], "days crosses over MA", upper[1], "for", self.tag,'\n'])
 
         return message
-
-
-if __name__ == '__main__':
-    pd.set_option("display.max_columns", 10)
-    ticker = yf.Ticker("JPY=X")
-    f=IndicatorObject("JPY=X")

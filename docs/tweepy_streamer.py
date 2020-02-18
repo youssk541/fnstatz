@@ -3,7 +3,7 @@ from tweepy import Cursor
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
-import twitter_credentials
+from twitter_credentials import *
 
 
 class TwitterClient:
@@ -47,8 +47,8 @@ class TwitterClient:
 class TwitterAuthenticator:
     @staticmethod
     def authenticate_twitter_app():
-        auth = OAuthHandler(twitter_credentials.CONSUMER_KEY, twitter_credentials.CONSUMER_SECRET)
-        auth.set_access_token(twitter_credentials.ACCESS_TOKEN, twitter_credentials.ACCESS_TOKEN_SECRET)
+        auth = OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+        auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
         return auth
 
 
@@ -84,16 +84,16 @@ class TwitterListener(StreamListener):
         print(status)
 
 
-if __name__ == "__main__":
-    # stockList=['^FCHI']
-    # stocks=stockContainer()
-    # stocks.get_stocks(stockList,"13-11-2019", "14-11-2019","d")
-    # DF=stocks.conteneur
-    # pd.set_option('display.max_columns',50)
-    # f = pdr.DataReader(stockList, "av-daily", start=datetime(2019, 11, 10),end = datetime(2019, 11, 14),api_key = AvKey)
-    # print(alois.get_home_timeline_tweets(1))
-    # twitter_streamer.stream_tweets(fetched_tweets_filename, hashtagList)
-    streamer = TwitterStreamer()
-    client = TwitterClient()
-    # streamer.stream_tweets(hashtag_list=['SEC'])
-    client.publish_tweet("Hello world")
+# if __name__ == "__main__":
+#     # stockList=['^FCHI']
+#     # stocks=stockContainer()
+#     # stocks.get_stocks(stockList,"13-11-2019", "14-11-2019","d")
+#     # DF=stocks.conteneur
+#     # pd.set_option('display.max_columns',50)
+#     # f = pdr.DataReader(stockList, "av-daily", start=datetime(2019, 11, 10),end = datetime(2019, 11, 14),api_key = AvKey)
+#     # print(alois.get_home_timeline_tweets(1))
+#     # twitter_streamer.stream_tweets(fetched_tweets_filename, hashtagList)
+#     streamer = TwitterStreamer()
+#     client = TwitterClient()
+#     # streamer.stream_tweets(hashtag_list=['SEC'])
+#     client.publish_tweet("Hello world")
