@@ -36,7 +36,7 @@ def startUSRate():
         if(row):
             treasury_yields.loc[datetime.strptime(row[0].text, "%m/%d/%y")] = [floatify(element.text) for element in row[1:]]
 
-    treasury_yields.to_csv(rateFileDirectory + '/treasuryTest.csv', sep='\t',mode='a', header=None)
+    treasury_yields.to_csv(rateFileDirectory + '/treasury_yields.csv', sep='\t',mode='a', header=None)
 
 def startEuropeanRateFile():
     link = 'https://sdw-wsrest.ecb.europa.eu/service/data/YC/B.U2.EUR.4F.G_N_A.SV_C_YM.?startPeriod=2020-01-01'

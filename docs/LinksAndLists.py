@@ -97,6 +97,6 @@ Indices = dict({'^DJI': 'Dow Jones Industrial',
                 })
 
 rootDir="./"
-pickledDataDirectoryPath="../pickledFiles"
-repositoryDirectory = "../Image_Directory"
-rateFileDirectory="../RateFiles"
+pickledDataDirectoryPath="./pickledFiles"
+repositoryDirectory = "./Image_Directory"
+rateFileDirectory="./RateFiles"
