@@ -83,17 +83,3 @@ class TwitterListener(StreamListener):
             return False
         print(status)
 
-
-# if __name__ == "__main__":
-#     # stockList=['^FCHI']
-#     # stocks=stockContainer()
-#     # stocks.get_stocks(stockList,"13-11-2019", "14-11-2019","d")
-#     # DF=stocks.conteneur
-#     # pd.set_option('display.max_columns',50)
-#     # f = pdr.DataReader(stockList, "av-daily", start=datetime(2019, 11, 10),end = datetime(2019, 11, 14),api_key = AvKey)
-#     # print(alois.get_home_timeline_tweets(1))
-#     # twitter_streamer.stream_tweets(fetched_tweets_filename, hashtagList)
-#     streamer = TwitterStreamer()
-#     client = TwitterClient()
-#     # streamer.stream_tweets(hashtag_list=['SEC'])
-#     client.publish_tweet("Hello world")
