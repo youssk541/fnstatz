@@ -25,7 +25,7 @@ In  _docs/twitter_credentials.py_ , fill out the 4 fields :
 Enter the credentials that you've been given for your account (Make sure to also store them somewhere else as they might not be given again)
 
 # Step 3
-Make sure that you have python on your machine as well as an environment variable "python" linked with the install folder for your version of python (usually in the C:\program_files folder but it might not be the case if you chose to save it somewhere else).
+Make sure that you have python on your machine as well as an environment variable linked with the install folder for your version of python (usually in the C:\program_files folder but it might not be the case if you chose to save it somewhere else).
 If you don't have python , you can download it from here [link](https://www.python.org/downloads/)
 To set up an environment variable, check out this tutorial : [link](https://www.youtube.com/watch?v=Y2q_b4ugPWk)
 # Step 4
