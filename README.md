@@ -33,6 +33,6 @@ Now that you have your environment set up properly, you can start using the appl
 
 First double click on _Startup_ to initalize the application: This will download the python requirements and all files necessary for the application to function correctly . This step might take a few minutes .
 
-The project is now fully set-up, you can double click on  _startTwitter_ to start the publications and analysis.
+The project is now fully set-up, you can double click on  _startApp_ to start the publications and analysis.
 
 
