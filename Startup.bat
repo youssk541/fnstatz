@@ -1,1 +1,1 @@
-py docs/startup.py
+python docs/startup.py
