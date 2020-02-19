@@ -509,6 +509,3 @@ def getEconomicSentiment(publisher):
     actualNumber =  "".join(actualRow.find("div" , {"class":"event-table-history__actual green"}).find("span").text.split())
     previousNumber = "".join(actualRow.find("div" , {"class":"event-table-history__previous"}).text.split())
     publisher.publish_tweet(" ".join(["Zew indicator of economic sentiment :",actualNumber,"(Previous result :",previousNumber,")\nNext release",str(datetime.fromtimestamp(int(nextDate)/1000).date())]))
-
-if __name__=="__main__":
-    updateEuropeanRateFile()
