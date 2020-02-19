@@ -94,7 +94,7 @@ if __name__=="__main__":
     print("\n\n")
     print("################# Requirements installed #################")
     print("\n\n")
-    print("################# Initializing stock objects #################")
+    print("################# Initializing stock objects (This step might take a minute) #################")
     startup()
     print("########################################################\n########################################################\n")
     print("################# Startup process finished #################")
