@@ -6,7 +6,7 @@ setup(
     version='0.1.0',
     packages=[''],
     url='https://github.com/youssk541/fnstatz',
-    license='Licence',
+    license='License',
     author='Youssef berbiche',
     author_email='berbiche.youssef@gmail.com',
     description='Twitter notifications for financial markets'
